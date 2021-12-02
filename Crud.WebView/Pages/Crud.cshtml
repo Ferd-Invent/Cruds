@@ -1,0 +1,32 @@
+﻿@page
+@model Crud.WebView.Pages.CrudModel
+@{
+}
+<link href="~/lib~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<form>
+  <div class="mb-3">
+  <label for="Codigo" class="form-label">Código</label>
+  <input class="form-control" id="inputCodigo">  
+  </div>
+  <div class="mb-3">
+  <label for="Nome" class="form-label">Nome</label>
+  <input class="form-control" id="inputNome" placeholder="Por gentileza, digite aqui o seu Nome">  
+  </div>
+  <div class="mb-3">
+  <label for="CPF" class="form-label">CPf</label>
+  <input type="" class="form-control" id="inputCPF">  
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

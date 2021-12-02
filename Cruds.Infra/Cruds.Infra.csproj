@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db" Version="3.6.0" />
+    <PackageReference Include="linq2db.SqlServer" Version="3.6.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cruds.UI\Cruds.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataModel\dbClientes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbClientes.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModel\dbClientes.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dbClientes.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

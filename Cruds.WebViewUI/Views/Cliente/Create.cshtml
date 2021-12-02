@@ -1,0 +1,65 @@
+﻿@model Cruds.Domain.Cliente
+@{
+}
+<link href="~/lib~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/lib~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+<form asp-action="Create" class="needs-validation" novalidate>
+  
+    <div class="input-group">
+    <div class="form-group col-md-4">
+    <label for="Nome" class="form-label" style="padding-right:50px;">Nome</label>
+   <input type="text" asp-for="Nome" class="form-control" id="inputNome"  placeholder="Digite aqui o seu Nome" required>
+    </div>
+
+    <div class="form-group col-md-2" style="padding-left:15px;">
+    <label for="CPF" class="form-label">CPF</label>
+    <input type="text" asp-for="Cpf" class="form-control" id="inputCPF" placeholder="Digite o seu CPF" required>
+    </div>
+   
+
+   <div class="form-group col-md-2"style="padding-left:15px;">
+    <label for="DataDeNascimento" class="form-label">Data de Nascimento</label>
+    <input type="date" asp-for="DataDeNascimento" class="form-control" id="inputDataDeNascimento" required>   
+  </div>
+ </div>
+  <div class="form-group col-md-4" style="margin-top:15px;">
+    <label for="Email" class="form-label">Email</label>
+    <input type="email" asp-for="Email" class="form-control" id="inputEmail" placeholder="exemplo@mail.com" required>
+  </div>
+
+  <div class="col-2"style="margin-top:15px;">
+    <label for="exampleInputEmail1" class="form-label">Renda Mensal</label>
+    <input type="number" asp-for="RendaMensal" class="form-control" id="inputRendaMensal" aria-describedby="emailHelp" required/>  
+  </div>
+  <div style="margin-top:5%">
+   
+  
+   <input type="submit"  class="btn btn-primary" value="Salvar">
+   <a class="btn btn-secondary" asp-controller="Cliente" asp-action="Clientes">Cancelar</a>
+  </div>
+ 
+</form>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+</script>

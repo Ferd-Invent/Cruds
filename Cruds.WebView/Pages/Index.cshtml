@@ -1,0 +1,48 @@
+﻿@page
+@model IEnumerable<Cruds.Domain.ICliente>
+
+@{
+    ViewData["Title"] = "Home page";
+}
+<link href="~/lib~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="card" style="width: 50rem;">
+  
+<div class="card-body">
+    
+    <h5 class="card-title">Clientes</h5>
+    <table>
+        <tr>
+           <th>@Html.DisplayNameFor(model => model.Codigo)</th> 
+           <th>@Html.DisplayNameFor(model => model.Nome)</th> 
+           <th>@Html.DisplayNameFor(model => model.Cpf)</th> 
+           <th>@Html.DisplayNameFor(model => model.DataDeNascimento)</th> 
+           <th>@Html.DisplayNameFor(model => model.Email)</th> 
+           <th>@Html.DisplayNameFor(model => model.RendaMensal)</th> 
+           </tr> 
+                @foreach (var a in Model)
+                {
+                 <tr>
+                     <td>@Html.DisplayFor(modelItem => a.Codigo)</td>
+                     <td>@Html.DisplayFor(modelItem => a.Nome)</td>
+                     <td>@Html.DisplayFor(modelItem => a.Cpf)</td>
+                     <td>@Html.DisplayFor(modelItem => a.DataDeNascimento)</td>
+                     <td>@Html.DisplayFor(modelItem => a.Email)</td>
+                     <td>@Html.DisplayFor(modelItem => a.RendaMensal)</td>
+
+                 </tr>
+
+
+                }
+         </table>
+   
+
+    <button class="btn btn-primary" asp-action="Close"> Ok </button>
+    <button class="btn btn-primary" asp-action=""> Cancelar</button>
+    <button class="btn btn-primary" style="margin-left:23rem;"> Adicionar</button>
+    <button class="btn btn-primary" asp-action=""> Editar </button>
+    <button class="btn btn-primary" asp-action="">Remover</button>
+
+  </div>
+</div>
+  

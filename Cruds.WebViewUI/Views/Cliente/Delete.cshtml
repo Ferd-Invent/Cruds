@@ -1,0 +1,47 @@
+﻿@model Cruds.Domain.Cliente
+
+<h2>A ação de deletar foi acionada!</h2>
+
+<h3> Você tem certeza que deseja deletar as informações abaixo?</h3>
+<div>
+    <h4>Cliente: </h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataDeNascimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataDeNascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RendaMensal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RendaMensal)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Codigo" />
+        <input type="submit" value="Deletar" class="btn btn-danger" style="margin-top:15px;"/> 
+        <a asp-action="Clientes" class="btn btn-secondary" style="margin-top:15px;padding-left:10px;">Voltar</a>
+    </form>
+</div>
