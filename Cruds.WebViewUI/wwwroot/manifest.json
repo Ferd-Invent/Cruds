@@ -1,0 +1,130 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "clientes.lista",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "clientes.lista.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "clientes.lista.i18n.i18n",
+          "fallbackLocale": "",
+          "supportedLocales": [
+            ""
+          ]
+        }
+
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "clientes.lista.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+
+      "routes": [
+        {
+          "pattern": "",
+          "name": "listagemName",
+          "target": "listagemTarget"
+        },
+        {
+          "pattern": "detail/{codigo}",
+          "name": "detail",
+          "target": "Detail"
+        },
+        {
+          "pattern": "cadastrarCliente",
+          "name": "cadastrarCliente",
+          "target": "CadastrarCliente"
+        },
+        {
+          "pattern": "atualizarCliente/{codigo}",
+          "name": "atualizarCliente",
+          "target": "CadastrarCliente"
+        },
+        {
+          "pattern": "atualdiszaCliente/{codigo}",
+          "name": "atuadslzar",
+          "target": "CadastrarCliente"
+
+        }
+      
+      
+      ],
+
+      "targets": {
+
+        "listagemTarget": {
+          "viewId": "listagem",
+          "viewName": "Listagem"
+        },
+        "Detail": {
+          "viewId": "detail",
+          "viewName": "Detail"
+        },
+
+        "CadastrarCliente": {
+          "viewId": "cadastrarCliente",
+          "viewName": "CadastarCliente"
+        },
+
+        "AtualizarCliente": {
+          "viewId": "atualizarCliente",
+          "viewName": "AtualizarCliente"
+
+        },
+        "updateCliente": {
+          "viewId": "cadastrarCliente",
+          "viewName": "CadastrarCliente",
+          "viewLevel": 2
+        
+        }
+
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cruds.Infra", "Cruds.Infra\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cruds.Domain", "Cruds.UI\Cruds.Domain.csproj", "{2B2F2725-1636-4A84-9725-5113EE44EEF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cruds.WebViewUI", "Cruds.WebViewUI\Cruds.WebViewUI.csproj", "{1ECA7941-461A-4ADC-884B-7CB915A181CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cruds.WebViewUI", "Cruds.WebViewUI\Cruds.WebViewUI.csproj", "{1ECA7941-461A-4ADC-884B-7CB915A181CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

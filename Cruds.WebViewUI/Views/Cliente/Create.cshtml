@@ -4,6 +4,7 @@
 <link href="~/lib~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 <script type="text/javascript" src="~/lib~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
+
 <form asp-action="Create" class="needs-validation" novalidate>
   
     <div class="input-group">
@@ -14,7 +15,8 @@
 
     <div class="form-group col-md-2" style="padding-left:15px;">
     <label for="CPF" class="form-label">CPF</label>
-    <input type="text" asp-for="Cpf" class="form-control" id="inputCPF" placeholder="Digite o seu CPF" required>
+    <input type="tel" asp-for="Cpf" class="form-control" id="inputCPF" 
+     maxlength="11" placeholder="Digite o seu CPF" required>
     </div>
    
 
@@ -30,7 +32,7 @@
 
   <div class="col-2"style="margin-top:15px;">
     <label for="exampleInputEmail1" class="form-label">Renda Mensal</label>
-    <input type="number" asp-for="RendaMensal" class="form-control" id="inputRendaMensal" aria-describedby="emailHelp" required/>  
+    <input type="number" placeholder="0" asp-for="RendaMensal" class="form-control" id="inputRendaMensal" aria-describedby="emailHelp" required/>  
   </div>
   <div style="margin-top:5%">
    
@@ -40,11 +42,19 @@
   </div>
  
 </form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#inputCPF").mask("999.999.999-99");
+	});
+
+</script>
 <script>
+
     // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   'use strict'
-
+ 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll('.needs-validation')
 

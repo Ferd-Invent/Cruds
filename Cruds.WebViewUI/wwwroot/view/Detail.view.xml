@@ -1,0 +1,83 @@
+<mvc:View
+		controllerName="clientes.lista.controller.Detail"
+		xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" 
+		xmlns:c="sap.ui.core" 
+		xmlns:t="sap.ui.table"
+		xmlns:f="sap.ui.layout.form" 
+		xmlns:l="sap.ui.layout" height="100%">
+
+	<App class="MyProjeto">
+	<Page showNavButton="true" navButtonPress=".onNavBack" 
+		  enableScrolling="true" 
+		  title="Detalhes do Cliente" 
+		  class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
+
+		
+		<content>
+			<VBox fitContainer="true">
+
+				<f:SimpleForm  id="SimpleFormDisplay480" minWidth="1024" 
+							   maxContainerCols="2" editable="false" 
+							   layout="ResponsiveGridLayout"  labelSpanL="4" labelSpanM="4" 
+							   emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+					<f:content>
+						<c:Title text="Dados Cadastrais" />
+
+						<Label text ="Codigo"/>
+						<Text text = "{cliente>/codigo}" wrapping= "false" />
+
+						<Label text="Nome"/>
+						<Text text="{cliente>/nome}" wrapping="false" />
+
+						<Label text="CPF" />
+						<Text text="{cliente>/cpf}" wrapping="false" />
+
+						<Label text="Data de Nascimento" />
+						<Text text="{cliente>/dataDeNascimento}" wrapping="false" />
+
+						<Label text="Email"/>
+						<Text text="{cliente>/email}" wrapping="false" />
+
+						<Label text="RendaMensal"/>
+						<Text text="{cliente>/rendaMensal}" wrapping="false" /> 
+
+					</f:content>
+					<f:layoutData>
+						<FlexItemData shrinkFactor="0" backgroundDesign="Solid" styleClass="sapContrastPlus" />
+					</f:layoutData>
+
+					
+				</f:SimpleForm>
+			
+				<l:HorizontalLayout class="sapUiContentPadding">
+					<Button text="Editar"
+								press=".onIrparaAtualizar"
+								class="ButtonDecente"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://edit"
+								width="124px">
+						<layoutData>
+							<FlexItemData growFactor="2" />
+						</layoutData>
+					</Button>
+
+					<Button text="Remover"
+								press=".deletarCliente"
+								type="Reject"
+								class="ButtonDecente2"
+								ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+								icon="sap-icon://delete"
+								width="124px">
+						<layoutData>
+							<FlexItemData growFactor="3" />
+						</layoutData>
+					</Button>
+				</l:HorizontalLayout>
+				
+			</VBox>
+			
+		</content>
+		
+	</Page>
+	</App>
+</mvc:View>

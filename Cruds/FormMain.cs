@@ -10,10 +10,10 @@ namespace Crud
     public partial class FormMain : Form
     {
 
-        public  RepoLinqTodb linqTodb;
-        public IRepositoryCliente _RepositoryCliente;
+        public  RepositoryClienteLinq linqTodb;
+   
         
-        public FormMain(RepoLinqTodb linqTodb)
+        public FormMain(RepositoryClienteLinq linqTodb)
         {
             InitializeComponent();
            //this._RepositoryCliente = _RepositoryCliente;

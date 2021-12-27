@@ -8,7 +8,7 @@ namespace Cruds.WebViewUI.Controllers
 {
     public class HomeController : Controller
     {
-        public RepoLinqTodb repoLinqTodb;
+        public RepositoryClienteLinq repoLinqTodb;
 
         private readonly ILogger<HomeController> _logger;
 

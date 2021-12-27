@@ -1,10 +1,4 @@
-﻿using LinqToDB;
-using LinqToDB.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LinqToDB.Configuration;
 
 namespace Cruds.Infra
 {
@@ -33,16 +27,9 @@ namespace Cruds.Infra
                         Name = "dbClientes",
                         ProviderName = "System.Data.SqlClient",
                         ConnectionString =
-                            @"Server=.\SQLEXPRESS;Database=dbClientes;Trusted_Connection=True;Enlist=False;"
+                            @"Server=localhost\SQLEXPRESS;Database=dbClientes;Trusted_Connection=True;"
                     };
             }
         }
-
-
-
-
-
-
-
     }
 }

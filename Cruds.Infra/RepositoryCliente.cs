@@ -38,6 +38,7 @@ namespace Cruds.Infra
         public List<Cliente> RetornarClientes()
 
         {
+          
             string sql = "Select * from Cliente";
             List<Cliente> clientes = new List<Cliente>();
 

@@ -1,0 +1,17 @@
+{
+  "name": "cliente.lista",
+  "version": "1.0.0",
+  "author": "sap se",
+  "description": "code: overflow toolbar - in a table and in the footer of a page",
+  "scripts": {
+    "start": "ui5 serve",
+    "build": "ui5 build"
+  },
+  "dependencies": {
+    "@openui5/themelib_sap_fiori_3": "^1",
+    "@openui5/sap.m": "^1"
+  },
+  "devdependencies": {
+    "@ui5/cli": "^2.0.0"
+  }
+}
