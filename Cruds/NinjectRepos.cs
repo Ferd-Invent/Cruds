@@ -29,7 +29,7 @@ namespace Crud.UI
         {
             public override void Load()
             {
-              Bind<IRepositoryCliente>().To<RepoLinqTodb>(); 
+              Bind<IRepositoryCliente>().To<RepositoryClienteLinq>(); 
                 
             }
 

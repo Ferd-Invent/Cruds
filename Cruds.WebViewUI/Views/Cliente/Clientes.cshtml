@@ -5,12 +5,12 @@
 }
 <link href="~/lib~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
-<div class="card position-fixed" style="width: 63rem;">
+<div class="card position-fixed " style="width: 63rem;">
   
 <div class="card-body">
     
     <h5 class="card-title" style="margin-bottom:15px;">Clientes</h5>
-    <table class="table table-striped table-hover" style="border-collapse">
+    <table class="table table-striped table-hover table-bordered" style="">
         <tr>
            <th>@Html.DisplayNameFor(model => model.Codigo)</th> 
            <th>@Html.DisplayNameFor(model => model.Nome)</th> 
@@ -43,7 +43,7 @@
 
     <button class="btn btn-primary" asp-area="" asp-controller="Home"  asp-action="Index" > Ok </button>
     <button class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index"> Cancelar</button>
-    <a class="btn btn-primary" style="margin-left:43rem;" asp-controller="Cliente" asp-action="Create"> Adicionar </a>
+    <a class="btn btn-primary" style="margin-left:46rem;" asp-controller="Cliente" asp-action="Create"> Adicionar </a>
   
   </div>
 </div>

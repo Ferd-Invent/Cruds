@@ -1,0 +1,82 @@
+<mvc:View
+	height="100%"
+	controllerName="clientes.lista.controller.Listagem"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+	<core:InvisibleText id="text1" text="Label text"/>
+<App class="MyProjeto">
+	<Page title="Clientes"
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding"
+		showNavButton="false">
+				<Toolbar>
+					<Avatar
+					displaySize="XS"
+					backgroundColor="Transparent"
+					/>
+					<Title level="H2" text="Clientes"  />
+				<ToolbarSpacer />
+					<Button icon="sap-icon://settings" />
+				</Toolbar>
+				
+		<content>
+			
+			<Label/>
+
+			<Table	
+				id="ListagemCliente"
+				items="{
+				path:'cliente>/',
+				sorter:{path:'codigo'}
+				}">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<ToolbarSpacer/>
+						<SearchField ariaLabelledBy="text1" id="maxPrice" liveChange="onFilter">
+							<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+						</SearchField>
+						<Button text="Reset" type="Transparent" press="onReset"/>
+						<OverflowToolbarButton tooltip="Add" press=".onAdicionar" text="Adicionar" icon="sap-icon://add"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em"><Text text="Codigo" /></Column>
+					<Column width="12em"><Text text="Nome" /></Column>
+					<Column width="12em"><Text text="CPF" /></Column>
+					<Column width="12em"><Text text="Data de Nascimento"/></Column>
+				    <Column width="12em"><Text text="Email" /></Column>
+					<Column width="12em"><Text text="Renda Mensal"/></Column>
+				</columns>
+				
+				<items>
+					<ColumnListItem type="Navigation" press=".onPress">
+						<cells>
+
+							
+                            <Text text="{cliente>codigo}" wrapping="false" />						
+							<Text text="{cliente>nome}" wrapping="false"/>
+							<Text text="{cliente>cpf}" wrapping="false"  />
+							<Text text="{cliente>dataDeNascimento}" wrapping="false"/>
+							<Text text="{cliente>email}" wrapping="false"/>
+							<Text text="{cliente>rendaMensal}" wrapping ="false"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Text  text="Invent Software">
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+				</Text>			
+				
+			</OverflowToolbar>
+		</footer>
+
+	</Page>
+	</App>
+</mvc:View>

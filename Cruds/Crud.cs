@@ -19,11 +19,11 @@ namespace Crud
         public int Indice;
         public List<Cliente> clientes;
 
-        public Cliente cliente1 = new Cliente();
+        public Cliente cliente1 = new();
 
-        public RepoLinqTodb linqTodb;
+        public RepositoryClienteLinq linqTodb;
 
-        public Crud(int fes, RepoLinqTodb linqTodb)
+        public Crud(int fes, RepositoryClienteLinq linqTodb)
         {
             this.linqTodb = linqTodb;
 

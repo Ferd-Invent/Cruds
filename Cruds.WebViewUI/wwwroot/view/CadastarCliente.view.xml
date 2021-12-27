@@ -1,0 +1,108 @@
+﻿<mvc:View
+	controllerName="clientes.lista.controller.CadastrarCliente"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+	<Page showNavButton="true" navButtonPress=".onNavBack">
+	<VBox class="sapUiSmallMargin" >
+		<f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1">
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="Cadastrar-se"/>
+					<ToolbarSpacer />					
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Toolbar ariaLabelledBy="Title2">
+					<Title id="Title2" text="Dados pessoais"/>
+					<ToolbarSpacer />
+
+				</Toolbar>
+
+				<Label text="Nome" />
+				<Input type="Text" value="{cliente>/nome}">
+				</Input>
+
+
+					
+				<Label text="CPF" />
+				<MaskInput mask="999.999.999-99" value="{cliente>/cpf}">
+					<layoutData>
+						<l:GridData span="XL3 L2 M2 S3" />
+					</layoutData>
+				</MaskInput>
+			
+				<!--<Label text="Data de Nascimento" />			
+				
+				<Input type="Date" value ="{cliente>/dataDeNascimento}" >
+					<layoutData>
+						<l:GridData span="XL3 L2 M2 S3"/>
+					</layoutData>
+				</Input>-->
+
+				<Label text="Data de Nascimento"/>
+					<DatePicker
+							id="DP2"
+							change="handleChange"						
+							formatOptions=" style:short"
+							valueFormat="yyyy-MM-dd" displayFormat="long"
+							value ="{cliente>/dataDeNascimento}"													
+							class="sapUiSmallMarginBottom"/>
+			                
+				
+				
+				<Label text="Email"/>
+				<Input type="Email" value="{cliente>/email}"/>
+				
+				<Label text="Renda Mensal"/>
+				<Input type="Number" value="{cliente>/rendaMensal}"/>
+				<Label text=""/>
+
+				<l:HorizontalLayout class="sapUiContentPadding">
+							
+						<Button text="Salvar"
+						press=".salvarNoBancoDeDados"
+					    type="Accept"
+						class="ButtonDecente"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+					    icon="sap-icon://save"
+						width="140px">
+						</Button>
+					
+						<Button text="Cancelar"
+							type="Reject"
+							press=".onEventoCancelar"
+						    ariaHasPopup="Dialog"
+							class="ButtonDecente3"
+							ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+							icon="sap-icon://cancel"
+							width="140px">
+						</Button>
+								
+				</l:HorizontalLayout>
+			</f:content>
+			
+		</f:SimpleForm>
+	
+	</VBox>
+	</Page>
+</mvc:View>
