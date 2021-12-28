@@ -71,13 +71,13 @@ sap.ui.define([
 					aSorters = [];
 
 				if (this.bGrouped) {
-					aSorters.push(new Sorter("Nome", this.bDescending, this._fnGroup));
+					aSorters.push(new Sorter("cliente>/nome", this.bDescending, this._fnGroup));
 				} else {
-					aSorters.push(new Sorter("Name", this.bDescending));
+					aSorters.push(new Sorter("cliente>/codigo", this.bDescending));
 				}
 
 				if (this.sSearchQuery) {
-					var oFilter = new Filter("Name", FilterOperator.Contains, this.sSearchQuery);
+					var oFilter = new Filter("cliente>/codigo", FilterOperator.Contains, this.sSearchQuery);
 					aFilters.push(oFilter);
 				}
 
@@ -88,7 +88,7 @@ sap.ui.define([
 					this.bGrouped = false;
 					this.bDescending = false;
 					this.sSearchQuery = 0;
-					this.byId("{cliente>nome}").setValue("");
+					this.byId("cliente>/nome").setValue("");
 
 					this.fnApplyFiltersAndOrdering();
 				},

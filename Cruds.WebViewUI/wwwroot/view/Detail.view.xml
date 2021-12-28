@@ -7,12 +7,12 @@
 		xmlns:l="sap.ui.layout" height="100%">
 
 	<App class="MyProjeto">
+		
 	<Page showNavButton="true" navButtonPress=".onNavBack" 
-		  enableScrolling="true" 
+		  enableScrolling="true" 		  
 		  title="Detalhes do Cliente" 
 		  class="sapUiResponsivePadding--header sapUiResponsivePadding--footer">
 
-		
 		<content>
 			<VBox fitContainer="true">
 
