@@ -26,55 +26,60 @@
 			singleContainerFullSize="false"
 			ariaLabelledBy="Title1">
 			<f:toolbar>
+								
 				<Toolbar id="TB1">
-					<Title id="Title1" text="Cadastrar-se"/>
-					<ToolbarSpacer />					
+					
+					<Title id="Title1" text="Cadastrar-se"/>				
+					<ToolbarSpacer />
 				</Toolbar>
 			</f:toolbar>
 			<f:content>
+				
 				<Toolbar ariaLabelledBy="Title2">
 					<Title id="Title2" text="Dados pessoais"/>
 					<ToolbarSpacer />
 
 				</Toolbar>
-
-				<Label text="Nome" />
-				<Input type="Text" value="{cliente>/nome}">
-				</Input>
-
-
-					
-				<Label text="CPF" />
-				<MaskInput mask="999.999.999-99" value="{cliente>/cpf}">
-					<layoutData>
-						<l:GridData span="XL3 L2 M2 S3" />
-					</layoutData>
-				</MaskInput>
-			
-				<!--<Label text="Data de Nascimento" />			
 				
-				<Input type="Date" value ="{cliente>/dataDeNascimento}" >
-					<layoutData>
-						<l:GridData span="XL3 L2 M2 S3"/>
-					</layoutData>
-				</Input>-->
+					<Label text="Nome" />
+					<Input type="Text" value="{cliente>/nome}">
+						<layoutData>
+							<l:GridData span="XL3 L3 M2 S3"/>
+						</layoutData>
 
-				<Label text="Data de Nascimento"/>
+					</Input>
+
+					<Label text="CPF" />
+					<MaskInput mask="999.999.999-99" value="{cliente>/cpf}">
+						<layoutData>
+							<l:GridData span="XL3 L2 M2 S3" />
+						</layoutData>
+					</MaskInput>
+
+				<Label text=""></Label>
+					<Label text="Data de Nascimento"/>
+
 					<DatePicker
-							id="DP2"
-							change="handleChange"						
-							formatOptions=" style:short"
-							valueFormat="yyyy-MM-dd" displayFormat="long"
-							value ="{cliente>/dataDeNascimento}"													
-							class="sapUiSmallMarginBottom"/>
-			                
-				
-				
-				<Label text="Email"/>
+								id="DP2"
+								change="handleChange"
+								formatOptions= "style:short"
+								valueFormat="yyyy-MM-dd" displayFormat="short"
+								value ="{cliente>/dataDeNascimento}"
+								class="labelMarginLeft">
+						<layoutData>
+							<l:GridData span="XL3 L2 M2 S3"/>
+						</layoutData>
+
+					</DatePicker>
+					<Text text="{path:'/dateValue', type:'sap.ui.model.type.Date', formatOptions: { style: 'short'}}" />
+
+		
+					<Label text="Email"/>
 				<Input type="Email" value="{cliente>/email}"/>
 				
 				<Label text="Renda Mensal"/>
 				<Input type="Number" value="{cliente>/rendaMensal}"/>
+				
 				<Label text=""/>
 
 				<l:HorizontalLayout class="sapUiContentPadding">
@@ -98,11 +103,9 @@
 							width="140px">
 						</Button>
 								
-				</l:HorizontalLayout>
-			</f:content>
-			
-		</f:SimpleForm>
-	
-	</VBox>
-	</Page>
+			  </l:HorizontalLayout>				
+			</f:content>		
+		  </f:SimpleForm>
+	   </VBox>
+    </Page>
 </mvc:View>

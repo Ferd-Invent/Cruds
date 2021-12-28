@@ -59,7 +59,7 @@
                             <Text text="{cliente>codigo}" wrapping="false" />						
 							<Text text="{cliente>nome}" wrapping="false"/>
 							<Text text="{cliente>cpf}" wrapping="false"  />
-							<Text text="{cliente>dataDeNascimento}" wrapping="false"/>
+							<Text text="{cliente>dataDeNascimento}" valueFormat="yyyy-MM-dd" displayFormat="short" wrapping="false"  />
 							<Text text="{cliente>email}" wrapping="false"/>
 							<Text text="{cliente>rendaMensal}" wrapping ="false"/>
 						</cells>
