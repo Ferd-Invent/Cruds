@@ -10,11 +10,5 @@ sap.ui.define([
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 		},
 
-		navegarParaLista: function () {
-
-			var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("overflowToolbarName");
-		}
-
 	});
 });

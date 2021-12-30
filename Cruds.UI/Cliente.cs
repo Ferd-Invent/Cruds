@@ -20,14 +20,15 @@ namespace Cruds.Domain
         public string Cpf { get; set; }
 
         [Column, Nullable]
+        [LinqToDB.Mapping.DataType((LinqToDB.DataType)DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime DataDeNascimento { get; set; }
 
         [Column, Nullable]
         public string Email { get; set; }
 
         [Column, Nullable]
-        [System.ComponentModel.DataAnnotations.DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0:dd-MM-yyyy}", ApplyFormatInEditMode =true)]
+       
         public decimal RendaMensal { get; set; }
 
         public Cliente(int codigo, string nome, string cpf, DateTime dataDeNascimento, string email, decimal rendaMensal)
