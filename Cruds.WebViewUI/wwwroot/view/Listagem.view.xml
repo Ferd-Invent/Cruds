@@ -6,39 +6,35 @@
 	xmlns="sap.m">
 
 	<core:InvisibleText id="text1" text="Label text"/>
-<App class="MyProjeto">
-	<Page title="Clientes"
-		showHeader="false"
-		enableScrolling="true"
-		class="sapUiContentPadding"
-		showNavButton="false">
-				<Toolbar>
-					<Avatar
-					displaySize="XS"
-					backgroundColor="Transparent"
-					/>
-					<Title level="H2" text="Clientes"  />
-				<ToolbarSpacer />
-					<Button icon="sap-icon://settings" />
-				</Toolbar>
-				
-		<content>
+	<App class="MyProjeto">
+		<Page title="Clientes"
+			showHeader="false"
+			enableScrolling="true"
+			class="sapUiContentPadding"
+			showNavButton="false">
+					<Toolbar>
+						<Avatar
+						displaySize="XS"
+						backgroundColor="Transparent"/>
+						<Title level="H2" text="Clientes"  />
+					<ToolbarSpacer />
+					</Toolbar>
+				   <content>
+				<Label/>
 			
-			<Label/>
-
 			<Table	
 				id="ListagemCliente"
 				items="{
 				path:'cliente>/',
-				sorter:{path:'codigo'}
+				sorter:{path:'codigo'}			
 				}">
 				<headerToolbar>
 					<OverflowToolbar id="otbSubheader">
 						<ToolbarSpacer/>
-						<SearchField ariaLabelledBy="text1" id="maxPrice" liveChange="onFilter">
+						<SearchField ariaLabelledBy="text1" id="maxPrice" search=".onFilter">
 							<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
 						</SearchField>
-						<Button text="Reset" type="Transparent" press="onReset"/>
+					
 						<OverflowToolbarButton tooltip="Add" press=".onAdicionar" text="Adicionar" icon="sap-icon://add"/>
 					</OverflowToolbar>
 				</headerToolbar>
@@ -54,14 +50,23 @@
 				<items>
 					<ColumnListItem type="Navigation" press=".onPress">
 						<cells>
-
 							
-                            <Text text="{cliente>codigo}" wrapping="false" />						
-							<Text text="{cliente>nome}" wrapping="false"/>
+                            <Text text="{cliente>codigo}" wrapping="false" />
+							<Text text="{cliente>nome}" wrapping="false"/>						
 							<Text text="{cliente>cpf}" wrapping="false"  />
-							<Text text="{cliente>dataDeNascimento}" valueFormat="yyyy-MM-dd" displayFormat="short" wrapping="false"  />
+							<Text text="{path:'cliente>dataDeNascimento',
+								         type: 'sap.ui.model.type.Date',
+										 formatOptions:{ 
+										  style: 'short',
+								          source:
+										  {
+										  pattern: 'yyyy-MM-ddTHH:mm:ss'
+										  },
+										  pattern: 'dd/MM/yyyy'
+								          }
+										 }" wrapping="false" />
 							<Text text="{cliente>email}" wrapping="false"/>
-							<Text text="{cliente>rendaMensal}" wrapping ="false"/>
+							<Text text="{cliente>rendaMensal}" wrapping ="false"/>  
 						</cells>
 					</ColumnListItem>
 				</items>
@@ -72,11 +77,9 @@
 				<ToolbarSpacer/>
 				<Text  text="Invent Software">
 					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
-				</Text>			
-				
+				</Text>							
 			</OverflowToolbar>
 		</footer>
-
 	</Page>
 	</App>
 </mvc:View>

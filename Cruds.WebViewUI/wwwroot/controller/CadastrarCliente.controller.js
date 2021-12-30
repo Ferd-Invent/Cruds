@@ -6,7 +6,7 @@
 	"sap/ui/core/format/DateFormat",
 
 ], function (Controller, History, MessageBox, JSONModel) {
-	"use strict";
+		"use strict";
 
 
 	var CadastrarClienteController = Controller.extend("cliente.lista.controller.CadastrarCliente", {
@@ -66,29 +66,44 @@
 		verificaSeOsCamposEstaoVazios: function (ModelCliente) {
 			let cliente = ModelCliente;
 			if (cliente.nome == null
-				&& cliente.cpf == null
-				&& cliente.dataDeNascimento == null
-				&& cliente.email == null
-				&& cliente.rendaMensal == null) {
+				|| cliente.cpf == null		
+				|| cliente.dataDeNascimento == null
+				|| cliente.email == null
+				|| cliente.rendaMensal == null) {
 
 				return null;
-			} else {
+			}			
+   			else {
+
 				return ModelCliente;
-
-
-			}
+            }
 
 		},
-
+	
 		salvarNoBancoDeDados: async function () {
 
 			let cliente = this.verificaSeOsCamposEstaoVazios(this.getClienteModel())
+			
 
 			if (cliente == null) {
 
-				MessageBox.warning("Preencha todos os campos");
+				MessageBox.warning("Preencha todos os campos")
 				return;
 			}
+			var strgCpf = cliente.cpf.replace(".", "").replace(".", "").replace("-", "").replace("_", "")
+			if (cliente == null
+				|| strgCpf.length != 11
+				|| cliente.rendaMensal <= 0) {
+
+				MessageBox.warning("Preencha todos os campos corretamente");
+				return;
+			}			
+			if (cliente.email.indexOf('@') == -1
+				|| cliente.email.indexOf('.') == -1)
+			{
+				MessageBox.warning("Email Inválido!")
+				return;
+            }
 
 			if (cliente.codigo == null) {
 
@@ -144,59 +159,7 @@
 					oRouter.navTo("listagemName", {}, true);
 				}
 			});
-		},
-
-		_setLocalTimeZoneZone: function (datevalue) {
-			if (datevalue !== undefined && datevalue !== null && datevalue !== "") {
-				datevalue = new Date(datevalue);
-				var offSet = datevalue.getTimezoneOffset();
-				var offSetVal = datevalue.getTimezoneOffset() / 60;
-				var h = Math.floor(Math.abs(offSetVal));
-				var m = Math.floor((Math.abs(offSetVal) * 60) % 60);
-				datevalue = new Date(datevalue.setHours(h, m, 0, 0));
-				return datevalue;
-			}
-			return null;
-		},
-		oDateTimew: function (oEvent) {
-			oDate = new sap.m.Input({
-				value: {
-					parts: [
-					 {path: "{cliente>/dataDeNascimento}", type: new sap.ui.model.type.DateTime(), formatOptions: {UTC:true} }
-
-					]
-                }
-            })
-		},
-		getOriginalDateTime: function (dateTime) {
-			if (dateTime !== undefined && dateTime !== null && dateTime !== "") {
-				var dateFormat = DateFormat.getInstance({
-					UTC: true,
-					pattern: "MM/dd/yyyy"
-				});
-				var originalDate = dateFormat.format(new Date(dateTime));
-				return originalDate;
-			}
-			return null;
 		},		
-		handleChange: function (oEvent) {
-			var oText = this.byId("textResult"),
-				oDP = oEvent.getSource(),
-				sValue = oEvent.getParameter("value"),
-				bValid = oEvent.getParameter("valid");
-
-			this._iEvent++;
-			oText.setText("Change - Event " + this._iEvent + ": DatePicker " + oDP.getId() + ":" + sValue);
-
-			if (bValid) {
-				oDP.setValueState(ValueState.None);
-			} else {
-				oDP.setValueState(ValueState.Error);
-			}
-		},
-
-
-
 	});
 	return CadastrarClienteController
 });

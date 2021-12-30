@@ -55,7 +55,7 @@
 	// to configure GetSchemaOptions properties, add them here, before load metadata call
 
 //	LoadSqlServerMetadata("MyServer", "MyDatabase", "User", "Password");
-	LoadSqlServerMetadata(@"localhost\SQLEXPRESS", "dbClientes"); // Integrated Security
+	LoadSqlServerMetadata(@"localhost\B1", "dbClientes"); // Integrated Security
 //	LoadSqlServerMetadata(string connectionString);
 
 	// to adjust loaded database model before generation, add your code here, after load metadata, but before GenerateModel() call

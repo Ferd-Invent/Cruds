@@ -34,7 +34,7 @@ builder.Services.AddLinqToDbContext<AppDataConnection>((provider, options) =>
 
 builder.Services.AddLogging(c => c.AddFluentMigratorConsole())
     .AddFluentMigratorCore().ConfigureRunner(c => c.AddSqlServer()
-    .WithGlobalConnectionString(@"Server=localhost\SQLEXPRESS;Database=dbClientes;Trusted_Connection=True;")
+    .WithGlobalConnectionString(@"Server=localhost\B1;Database=dbClientes;Trusted_Connection=True;")
     .ScanIn(Assembly.GetExecutingAssembly()).For.All());
 
 
@@ -70,6 +70,6 @@ app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-Database_Migration.EnsureDatabase("Persist Security Info = False; Integrated Security = true; Initial Catalog = master; server = .\\SQLEXPRESS", "dbClientes");
+Database_Migration.EnsureDatabase("Persist Security Info = False; Integrated Security = true; Initial Catalog = master; server = .\\B1", "dbClientes");
 app.Migrate();
 app.Run();

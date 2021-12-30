@@ -18,13 +18,13 @@ namespace DataModels
 {
 	/// <summary>
 	/// Database       : dbClientes
-	/// Data Source    : localhost\SQLEXPRESS
-	/// Server Version : 15.00.2000
+	/// Data Source    : localhost\B1
+	/// Server Version : 14.00.1000
 	/// </summary>
 	public partial class DbClientesDB : LinqToDB.Data.DataConnection
 	{
-		public ITable<Cliente> Clientes { get { return this.GetTable<Cliente>(); } }
-
+		public ITable<Cliente>     Clientes    { get { return this.GetTable<Cliente>(); } }
+		
 		public DbClientesDB()
 		{
 			InitDataContext();
@@ -56,14 +56,15 @@ namespace DataModels
 		partial void InitMappingSchema();
 	}
 
-    public static partial class TableExtensions
-    {
-        public static Cliente Find(this ITable<Cliente> table, int Codigo)
-        {
-            return table.FirstOrDefault(t =>
-                t.Codigo == Codigo);
-        }
-    }
+	
+	public static partial class TableExtensions
+	{
+		public static Cliente Find(this ITable<Cliente> table, int Codigo)
+		{
+			return table.FirstOrDefault(t =>
+				t.Codigo == Codigo);
+		}
+	}
 }
 
 #pragma warning restore 1591

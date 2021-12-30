@@ -204,7 +204,7 @@
             this.Name = "Crud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crud";
-            this.Load += new System.EventHandler(this.Crud_Load);
+         
             ((System.ComponentModel.ISupportInitialize)(this.nudRendaMensal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

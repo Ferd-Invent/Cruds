@@ -27,7 +27,7 @@ namespace Cruds.Infra
                         Name = "dbClientes",
                         ProviderName = "System.Data.SqlClient",
                         ConnectionString =
-                            @"Server=localhost\SQLEXPRESS;Database=dbClientes;Trusted_Connection=True;"
+                            @"Server=localhost\B1;Database=dbClientes;Trusted_Connection=True;"
                     };
             }
         }
